@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/webjars/jquery/3.1.1-1/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/1.0.2/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/2.3.3/stomp.min.js"></script>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        let id = [[${room.getId()}]];
+        let role = [[${role}]];
+        let room = /*[[${room}]]*/ null;
+        let layers = /*[[${layers}]]*/ null;
+        /*]]>*/
+    </script>
+    <script th:src="@{/js/WebSocketRoomScript.js}"></script>
+    <script type="module" th:src="@{/js/audioPlayer.js}"></script>
+</head>
+<body>
+<template>
+    <link th:href="@{/css/player.css}" rel="stylesheet">
+    <div id="audio-player-container">
+        <audio src="" preload="metadata" loop></audio>
+        <p id="player-name">audio player ish</p>
+        <button id="play-icon"></button>
+        <span id="current-time" class="time">0:00</span>
+        <input type="range" id="seek-slider" max="100" value="0">
+        <span id="duration" class="time">0:00</span>
+        <button id="shuffle-icon"></button>
+        <button id="repeat-icon"></button>
+        <output id="volume-output">100</output>
+        <input type="range" id="volume-slider" max="100" value="100">
+        <button id="mute-icon"></button>
+        <button id="menu-icon"></button>
+        <div class="dropdown">
+            <div class="dropdown-content" id="myDropdown">
+                <a href="#">+</a>
+            </div>
+        </div>
+    </div>
+</template>
+
+<div th:each="layer : ${layers}">
+    <audio-player th:player-id="${layers.indexOf(layer)}"></audio-player>
+</div>
+<button id="send" class="btn btn-default" type="submit">Send</button>
+</body>
+</html>

@@ -1,0 +1,23 @@
+.full-screen{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.index-btn{
+    height: 20%;
+    width: 30%;
+    display: block;
+    margin: auto;
+}
+.index-text{
+    text-align: center;
+    font-size: 5vw;
+}
+
+.center-block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <p th:if="${rooms.isEmpty()}">empty</p>
+    <p th:if="${!rooms.isEmpty()}">full</p>
+</div>
+<div>
+    <div th:each="room : ${rooms}">
+        <a th:href="'/rooms/' + ${room.getId().toString()}" th:text="${room.getName()}">Room name</a>
+    </div>
+</div>
+</body>
+</html>
