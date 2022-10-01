@@ -1,8 +1,10 @@
 This project is still in development. To open it on your pc you should create a psql database with the following structure:
+
 ![image](https://user-images.githubusercontent.com/55293545/193403669-54f6e8c4-9fa4-43df-a63c-e04e7eff46a4.png)
 
 Now I want to talk a little about how this project started. Me and my friends were playing TRPG (tabletop roleplaying game) and faced a problem that bothered us some time. We couldn't play ambient sounds and music at the same time with normal means. So I've decided to create one.
 Firstly I've decomposed the problem and created UML diagrams that looked like theese.
+
 ![image](https://user-images.githubusercontent.com/55293545/193404009-75a01183-8c22-45ef-a21b-4caab3278c5a.png)
 ![image](https://user-images.githubusercontent.com/55293545/193404021-f81fbf9a-2bcd-40d6-a6b2-c45cf0d22669.png)
 ![image](https://user-images.githubusercontent.com/55293545/193404040-2e6ca741-f7b9-474d-8919-9d8f3d7d55f3.png)
